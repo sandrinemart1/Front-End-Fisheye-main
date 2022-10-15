@@ -1,0 +1,103 @@
+
+#lightbox-background{
+    display: none;
+    justify-content: center;
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    width: auto;
+    height:auto;
+    background-color: $white;
+    z-index: 10;
+    overflow: auto;
+    .lightbox-modal{
+        margin: 20px auto;
+        max-width: 1253px;
+        max-height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .lightbox{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        height: 100vh;
+        padding: 22px;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+        & button{
+            cursor: pointer;
+        }
+        &_close{
+            background: url(../../assets/favicon.png/cross.svg)center center /100% 100%;
+            width:50px;
+            height: 50px;
+            position:fixed;
+            top:15px;
+            right:40px;
+            z-index: 10;
+        }
+    }
+}
+.lightbox_Container ul{
+    list-style-type: none;
+    li{
+        display:flex;
+    }
+}
+
+.lightbox_image{
+    object-fit: cover;
+    object-position:center top;
+    overflow: hidden;
+    height:70vh;
+    width: auto;
+    // animation: lightboxOpen 0.5s;
+    // min-height: 100vh;
+}
+.video-lightbox{
+    width:1050px ;
+    height:900px;
+}
+.lightbox_chevron--previous,
+.lightbox_chevron--next{
+    background: url(../../assets/favicon.png/arrow.svg)center center/42px 42px no-repeat;
+     width: 42px;
+     height:100%;
+     position: fixed;
+     top:0;
+     right:8%;
+     margin-top: -21px;
+
+}
+.lightbox_chevron--previous{
+    right: auto;
+    left:8%;
+    transform: rotate(180deg);
+}
+
+button{
+    border:none;
+    z-index: 10;
+    opacity: .8;
+    cursor: pointer;
+
+    transition:.3s;
+    &:hover,&:active{
+        opacity: 1;
+    }
+}
+.title_image{
+   color:$bg-1st-color;
+   font-size: 24px; 
+   font-weight: 400;
+}
+
+// @keyframes lightboxOpen{
+//     from{opacity: 0;}
+//     to{opacity: 1;}
+// }

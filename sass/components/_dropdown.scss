@@ -1,0 +1,78 @@
+.select-filter {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-left:50px;
+    &_button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+      background-color: $bg-1st-color;
+      font-family: $font-family;
+      color: white;
+      font-size: 1.20rem;
+      padding: 0.8rem 0.5rem;
+      border-radius: 0.3rem;
+      box-sizing: border-box;
+      opacity: 1;
+    
+      // &:hover, &:focus{
+      //   background-color: $bg-medium;
+      //   opacity: 0.8;
+      //   transition: 0.3s;
+      //   color:#000000;
+      //   font-weight: 700;
+      //   border: solid 2px $bg-1st-color;
+      // }
+    }
+  }
+  
+  .dropdownlist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $bg-1st-color;
+    border-radius: 0.3rem;
+    padding: 0 0.6rem;
+    cursor: pointer;
+    position: absolute;
+    top:-1rem;
+    z-index: 3;
+    &_choice {
+      display: flex;
+      align-items: center;
+      width: 9.5rem;
+      height: 3.2rem;
+      font-family: $font-family;
+      color: white;
+      &:nth-child(2) {
+        border-bottom: solid 0.05rem white;
+        border-top: solid 0.05rem white;
+      }
+    }
+  }
+  li{
+    font-size: 1.2rem;
+  }
+  .arrows {
+    cursor: pointer;
+    padding: .5rem;
+  }
+  .fa-chevron-down {
+    color: white;
+    padding: 0 0.9rem 0 1.7rem;
+  }
+  .fa-chevron-up {
+    color: white;
+    padding: 0 0.6rem 0 1rem;
+  }
+  .container {
+    position: absolute;
+    display: none;
+  }
+ #button-dropup {
+    position: absolute;
+    left: 6.7rem;
+    z-index: 3;
+  } 
