@@ -22,8 +22,8 @@ function dropDownClose() {
 }
 ///////  fonctions de tri  //////////////
 ////// tri par  'populaire' //////////////
-
 function popularitySort(media) {
+  console.log('ffffffffffffffffff')
   function tri(a, b) {
     return a.likes < b.likes ? 1 : a.likes == b.likes ? 0 : -1;
   }

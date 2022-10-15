@@ -47,13 +47,14 @@ document.addEventListener('click', (e)=>{
 
 //// DROPDOWN  APPEL et TRI///////////////
 let chevronDown = document.getElementById("button-dropdown")
-let popularity = document.getElementById("option1");
+let popularity = document.querySelector(".option1");
 let date = document.getElementById("option2");
 let titre = document.getElementById("option3");
 let chevronUp = document.getElementById("button-dropup")
 let dropDownDiv = document.querySelector(".container");
 let arrowDown = document.querySelector('#arrow-down')
-console.log(date)
+console.log(popularity)
+console.log('salut')
 chevronDown.addEventListener("click",()=>dropDownOpen())
 chevronUp.addEventListener('click', () =>dropDownClose())
 ///////  fonctions de tri avec boutons :'populaire' 'date' 'titre' //////////////

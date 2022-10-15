@@ -79,52 +79,33 @@ next.addEventListener('click',() =>goToNext());
 
 
 
-// function goToNext(){
-//   let items = document.querySelectorAll('.lightbox_object')
-//  console.log(items)
-//   let i = 1;
+let i = 1;
+function goToNext(){
+  let items = document.querySelectorAll('.lightbox_object')
+ console.log(items)
 
-//   let total = items.length-1
-//   console.log(total)
-//   if (i < total){
-//     const lastItem= items.item (i)
-//     console.log(lastItem)
-//      i++
-//   const currentItem = items.item (i)
-//   console.log(currentItem)
-//   setNewAttributes(lastItem,currentItem)
-// }else if (i === total){
-//   const lastItem = items.item (i)
-//   i = 0
-//   const currentItem = items.item (i)
-//   setNewAttributes(lastItem,currentItem) 
-// }
-// }
+  let total = items.length-1
+  console.log(total)
+  if (i < total){
+    const lastItem= items.item (i)
+    console.log(lastItem)
+     i++
+  const currentItem = items.item (i)
+  console.log(currentItem)
+  setNewAttributes(lastItem,currentItem)
+}else if (i === total){
+  const lastItem = items.item (i)
+  i = 0
+  const currentItem = items.item (i)
+  setNewAttributes(lastItem,currentItem) 
+}
+}
 
 
 previous.addEventListener('click',() =>goToPrevious());
-////////////////////////////////
-function goToNext(){
-    let items= document.querySelectorAll('.lightbox_object')
-    let total = items.length-1;
-    if (position< total){
-      const lastItem = document.querySelector(`.object_${position}`)
-      console.log(lastItem )
-      position++
-    //   console.log(JSON.parse(localStorage.getItem('photographerStock')).media[position])
-    //   console.log(document.getElementById('src').src)
-    // document.getElementById('src').src = `http://127.0.0.1:5502/assets/images/${firstName}/`+JSON.parse(localStorage.getItem('photographerStock')).media[position].image
-    const currentItem = document.querySelector(`.object_${position}`)
-    console.log(currentItem )
-    setNewAttributes(lastItem,currentItem)
-  }else if (position === total){
-    const lastItem  = document.querySelector(`.object_${position}`)
-    position = 0
-    const currentItem  = document.querySelector(`.object_${position}`)
-    setNewAttributes(lastItem ,currentItem ) 
-  }
-  }
-///////////////////////////////////
+
+
+
 function goToPrevious(){
   let items= document.querySelectorAll('.lightbox_object')
   let total = items.length-1;
