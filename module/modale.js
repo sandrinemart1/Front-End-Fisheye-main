@@ -1,4 +1,4 @@
-// import{getPhotographer} from './Photographer2.js'
+
 
 const mainPage = document.querySelector('.Photographer-Page-Main');
 const pageHeader =document.querySelector('.page_photographer-header');
@@ -9,7 +9,6 @@ const modalCross = document.querySelector('.modal-header_text span i')
 const footerInfos = document.querySelector('.infos');
 const submitButton = document.getElementById('submit-button')
 const msgAll = document.querySelectorAll('.error-msg');
-// console.log(msgAll[3])
 
 // creation message prénom
 const msgFirstName = document.getElementById('message-firstName')
@@ -21,7 +20,7 @@ const msgEmail = document.getElementById('message-email')
 const msgValid = document.getElementById('message-validation')  
 //div avec input
 const divInput = document.querySelectorAll('modal_form--formData')
-// console.log(divInput)
+
 const inputFirstName = document.getElementById('firstname')
 const inputLastName = document.getElementById('lastname')
 const inputEmail = document.getElementById('email')
@@ -64,7 +63,6 @@ function closeModal() {
 modalDiv.addEventListener('keydown', closeOnKey)
 function closeOnKey(e) {
   let keyname = e.key
-  console.log(e.key)
   if (keyname == 'Escape') {
     closeModal()
   }
@@ -94,19 +92,19 @@ const eMailRegex = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
   let msgcss = document.querySelector('.error-msg')
   let msgParent =msgcss.parentNode;
   let msg = msgParent.querySelector('span');
-  // console.log(msg);
 
 //validation du premiers input, prénom 
   firstName.addEventListener('blur',validFirstName)
-  
+ 
   function validFirstName(){
       if (firstName.value.trim() == "") {
         msgAll[0].textContent = "merci de renseigner votre prénom";
         firstName.classList.add('input-error')
         return false;
-      } else if (nameReGex.test(firstName.value) == false) {
+      } else if (nameReGex.test(firstName.value.trim()) == false) {
         msgAll[0].textContent  = "le prénom doit comporter 2 lettres minimum";
         firstName.classList.add('input-error')
+        // firstName.onfocus()
         return false;
       } else {    
         msgAll[0].textContent  = "merci de nous avoir confié votre prénom";
@@ -124,7 +122,7 @@ const eMailRegex = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
       msgAll[1].textContent = "merci de renseigner votre nom";
       lastName.classList.add('input-error')
       return false;
-    } else if (nameReGex.test(lastName.value) == false) {
+    } else if (nameReGex.test(lastName.value.trim()) == false) {
       msgAll[1].textContent  = "le nom doit comporter 2 lettres minimum";
       lastName.classList.add('input-error')
       return false;
@@ -160,7 +158,7 @@ const eMailRegex = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
   message.addEventListener("blur",validMessage);
 
   function validMessage(){
-    let msgLenght =message.value.length
+    let msgLenght =message.value.length;
 
     if (message.value.trim() == "") {
       msgAll[3].textContent = "merci d'écrire votre message";
@@ -178,25 +176,30 @@ const eMailRegex = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
       validMsg= true;
     }
   }
+  message.onkeydown = function(event) {
+    if (event.key == 'Enter') {
+      submit.blur();
+    }
+  }
   //validation du formulaire rempli correctement
   form.addEventListener("submit", (e) => {
     e.preventDefault();
   });
   form.addEventListener("submit", validate); 
-  function validate() {
+  function validate(e) {
     if (
       validFirst== true &&
       validLast == true &&
       validMail == true &&
       validMsg == true ) 
       {
-      msgAll[4].textContent ="Merci de nous avoir confié votre demande";
+      
       submit.classList.add('input-ok')
       console.log('Prénom : ' + firstName.value)
       console.log('Nom : ' + lastName.value)
       console.log('email : ' + eMail.value)
       console.log('message : ' + message.value)
-      closeModal()
+      closeModal(e)
  
     } else {
       if (!validFirst) {

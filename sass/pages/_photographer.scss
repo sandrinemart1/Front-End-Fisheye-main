@@ -19,11 +19,8 @@
 }
 
 
-a:focus{
-    text-decoration: none;
-    color: black;
-    background-color:$bg-3d-color ;
-}
+
+
 .page_photographer-header{
     display:flex;
     justify-content: space-between;
@@ -34,9 +31,9 @@ a:focus{
     object-fit: contain;
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.1);
-    }
+    // &:hover {
+    //   transform: scale(1.1);
+    // }
 }
 .page_photographer-informations{
     width: 1240px;
@@ -94,27 +91,15 @@ a:focus{
 .lightbox_figure{
     max-width: 1050px;
 }
-.media__link:active{
-    border: 3px black solid;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-    & img {
-        transform: scale(1);
-        transition: transform 0.3s ease-in-out, opacity 0.2s 100ms;
-        &:hover {
-          transform: scale(1.1);
-          opacity: 0.8;
-        }
-      }
-}
 
 .page_photographer-medias{
     width: 1240px;
     padding: 0 50px;
     
-}  
+}
+
+ 
 .page_photographer-media-attributes{
-    // width:100%;
 
     display: grid;
     grid-template-columns: 350px 350px 350px;
@@ -122,13 +107,23 @@ a:focus{
     grid-auto-flow: row;
     justify-content: space-between;
     margin: 100px 20px ;
-    // text-align: center;
-     .image-media {
+
+    .image-media {
         object-fit:cover;
         width: 350px;
         height:300px;
+        opacity: 1;
+        transform: scale(1);
+        transition:  0.5s ease-in-out;
+        &:focus {
+            border: solid 7px $bg-2nd-color;
+            opacity: 0.7;
+            transform: scale(1.15);
+        }  
     }
+    
 }
+
 .img_attributes{
     display: flex;
     justify-content: space-between;
@@ -143,6 +138,7 @@ a:focus{
     p{
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
+        padding:3px;
     }
     i{
         color:$bg-1st-color; 
@@ -155,9 +151,7 @@ a:focus{
         }
     }
  }
- .heartCss{
-    margin:4px;
- } 
+
  #contact_button {
     font-size: 20px;
     font-weight: 700;
@@ -177,7 +171,7 @@ a:focus{
     &:hover, &:focus{
         background-color: $bg-medium;
         opacity: 0.8;
-        // border: 4px black solid;
+        border: solid 5px black;
         color:#000000;
         font-weight: 700;
     }

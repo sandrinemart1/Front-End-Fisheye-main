@@ -33,10 +33,8 @@ async function myFetch(affichage) {
     async (response) => {
       if (response.ok) {
         const data = await response.json();
-        // console.log(data);
         const photographers = data.photographers;
         const media = data.media;
-        // console.log(media);
 
         dataInArray(photographers);
         dataInArray2(media);

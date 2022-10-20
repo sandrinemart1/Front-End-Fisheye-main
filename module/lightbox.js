@@ -1,6 +1,4 @@
 const mainPage = document.querySelector('.Photographer-Page-Main');
-// const modalButton =document.querySelector("#contact_button");
-// const footerInfos = document.querySelector('.infos');
 const filterDiv = document.querySelector('.select-filter')
 let lightBoxBg = document.querySelector('#lightbox-background');
 let lightboxContainer =document.querySelector(".lightbox-modal")
@@ -27,11 +25,8 @@ function lightboxOpen(e){
     lightBoxBg.setAttribute('aria-hidden', 'false')
     mainPage.setAttribute('aria-hidden', 'true')
     mainPage.setAttribute('tabindex', '-1')
-    // modalButton.style.display ='none';
     filterDiv.style.display ='none';
-    // filterDiv.setAttribute('aria-hidden','true')
-    // footerInfos.style.display ='none';
-    // footerInfos.setAttribute('aria-hidden','true')
+    filterDiv.setAttribute('aria-hidden','true')
     lightboxContainer.setAttribute('tabindex', '0')
     lightboxContainer.focus()
 
@@ -44,7 +39,7 @@ function lightboxOpen(e){
     lightboxContainer.focus()
 
   }
-  // console.log(document.getElementById('src'))
+
 
  
 
@@ -82,16 +77,12 @@ next.addEventListener('click',() =>goToNext());
 let i = 1;
 function goToNext(){
   let items = document.querySelectorAll('.lightbox_object')
- console.log(items)
-
   let total = items.length-1
-  console.log(total)
+
   if (i < total){
     const lastItem= items.item (i)
-    console.log(lastItem)
      i++
   const currentItem = items.item (i)
-  console.log(currentItem)
   setNewAttributes(lastItem,currentItem)
 }else if (i === total){
   const lastItem = items.item (i)
@@ -114,7 +105,6 @@ function goToPrevious(){
     i -= 1
     const currentItem = items.item (i)
     const lastItem = items.item (i+1)
-    console.log(currentItem)
     setNewAttributes(lastItem, currentItem)
   } else {
     const lastItem = items.item (i)
@@ -137,15 +127,14 @@ document.body.addEventListener('keydown',(e) => onKey(e))
 function onKey(e){
   // console.log(e.target)
   let keyname = e.key
-  console.log (keyname)
-  if(keyname =='Escape'){
-    lightboxClose()
-  }
-  else if(keyname =='ArrowRight'){
+  if(keyname =='ArrowRight'){
     goToNext()
   }
   else if(keyname =='ArrowLeft'){
     goToPrevious()
+  }
+  else if(keyname =='Escape'){
+    lightboxClose()
   }
 }
 
@@ -155,11 +144,9 @@ function lightboxClose(){
   lightBoxBg.setAttribute('aria-hidden', 'true')
   mainPage.setAttribute('aria-hidden', 'false')
   mainPage.setAttribute('tabindex', '0')
-  modalButton.style.display ='flex';
   filterDiv.style.display ='flex';
   filterDiv.setAttribute('aria-hidden','false')
-  footerInfos.style.display ='flex';
-  footerInfos.setAttribute('aria-hidden','false')
+
   let items = document.querySelectorAll('.lightbox_object')
   let itemsArray= Array.from(items)
    itemsArray.forEach((item)=>{

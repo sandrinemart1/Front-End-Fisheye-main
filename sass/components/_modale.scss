@@ -56,6 +56,7 @@
     }
 }
 
+
  /* style pour apparition modale */
 .appear{ 
     display:block;
@@ -117,9 +118,13 @@ form input,textarea{
     border-radius: 5px;
     font-size: 25px;
     outline: none;
+    resize: none;
 }
 form textarea{
     height:170px;
+}
+#message{
+    overflow-y:auto;
 }
 #submit-button{
     width: 170px;
@@ -128,6 +133,9 @@ form textarea{
     background-color: $bg-1st-color;
     color:white;
     font-size: 18px;
+    &:focus{
+        border: solid 6px $color-3rd-dark;
+    }
 
 }
 #comments{

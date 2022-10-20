@@ -2,51 +2,50 @@
 <html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type = "image/png" href = "./assets/favicon.png/camera-solid.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type = "image/png" href = "./assets/favicon.png/camera-solid.svg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--information SEO-->
     <title>Fisheyes-page-photographe</title>
-    <meta name="description" content="photographes freelances" />
+    <meta name="description" content="photographes freelances">
     <!-- feuilles de styles -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="sass/style.css" >
 </head>
 <body class="photographer-page-body">
     
     <div class="page_photographer"   >
         <!-- header -->
-        <header class="page_photographer-header" role="banner">
+        <header class="page_photographer-header" >
             <a href="/index.html" aria-label="Page d'accueil de Fisheye">
-                <img src="assets/images/logo.png" id ="logo2" aria-label ="logo-Fisheye-Aller à la page d'accueil" lang="en-GB"/>
+                <img src="assets/images/logo.png"  alt='logo fisheye' id ="logo2" aria-label ="logo-Fisheye-Aller à la page d'accueil" lang="en-GB">
             </a>
         </header>
         <!-- corps de page -->
-        <main class='Photographer-Page-Main' id='Photographer-Page-Main' role="main">
+        <main class='Photographer-Page-Main' id='Photographer-Page-Main' >
             <!-- section présentation photographe -->
-            <section class ="page_photographer-informations" id="infos" role="region" aria-label="toutes les réalisation du photographe" tabindex="-1">
+            <section class ="page_photographer-informations" id="infos" aria-label="toutes les réalisation du photographe" tabindex="-1">
                     <div class="page_photographer_text">
                         <h1 class="photographer_text--name" >Nom du photographe</h1>  
                         <p class="photographer_text--location" id ="location">London,UK</p>
                         <p class="photographer_text--tagline" id="tagline">Voir le beau dans le quotidien</p>
                         
                     </div>
-                    <button id="contact_button" type="button" role="button" tabindex="0">Contactez-moi</button>
+                    <button id="contact_button" type="button"  tabindex="0">Contactez-moi</button>
                     <picture class="photographer_section--banner">
-                            <img src="./assets/images/Photographers ID Photos/MimiKeel.jpg" alt="photo portrait de chaque photographe"/>
+                            <img src="./assets/images" alt="photo portrait de chaque photographe">
                         </picture>
             </section>
                             
             <!-- section dropdown             -->
             <section class="dropdown">
                 <h2>
-                    <label for="dropdown" id ="dropdown-label">Trier par</label>
+                    <label class="dropdown-label" id ="dropdown-label">Trier par</label>
                 </h2>
                 <div class="select-filter" id="select-filter">
-                    <button type="button" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-label="trier par filtres" class="select-filter_button" id="button-dropdown">
+                    <button type="button"  aria-haspopup="true" aria-expanded="false" tabindex="0" aria-label="trier par filtres" class="select-filter_button" id="button-dropdown">
                       <span class="option1">&ensp;Popularité</span>
                       <span class="arrows fas fa-chevron-down" id="arrow-down"></span> 
                     </button>
@@ -56,7 +55,7 @@
                         <li class="dropdownlist_choice" id="option2" role="option" aria-label="trier par date" tabindex="0">&ensp;Date</li>
                         <li class="dropdownlist_choice" id="option3" role="option" aria-label="trier par titre" tabindex="0">&ensp;Titre</li> 
                       </ul> 
-                      <button type="button" role="button" aria-haspopup="true" aria-expanded="true" tabindex="0" aria-label="fermer le choix de filtres" class="select-filter_button" id="button-dropup">
+                      <button type="button"  aria-haspopup="true" aria-expanded="true" tabindex="0" aria-label="fermer le choix de filtres" class="select-filter_button" id="button-dropup">
                         <span class="arrows fas fa-chevron-up"></span>   
                       </button>
                     </div>     
@@ -65,7 +64,7 @@
 
 
             <!-- section medias -->
-            <section class="page_photographer-medias" id ="media" role="region" aria-label="ensembles des photos et videos prises par le photographe" tabindex="-1">
+            <section class="page_photographer-medias" id ="media"  aria-label="ensembles des photos et videos prises par le photographe" tabindex="-1">
                 <div class="page_photographer-media-attributes">
 
             </div>
@@ -91,7 +90,7 @@
                 <div class ="modal-header">
                     <div class="modal-header_text">
                         <h2 class="modal__title">Contactez-moi</h2>
-                        <span class="close closeModal"id="closeModal" aria-labelledby="close" tabindex="0">
+                        <span class="close closeModal" id="closeModal" aria-labelledby="close" tabindex="0">
                             <i class="fa-solid fa-xmark"></i>
                         </span>
                         <p class="sr-only" id="close">fermer</p>
@@ -108,58 +107,57 @@
                 aria-label="formulaire de contact"
                 >
                     <div class="modal_form--formData">
-                        <label for ="firstname" class="modal_formaData--label">Prénom</label><br/>
+                        <label for ="firstname" class="modal_formaData--label">Prénom</label><br>
                         <input
                             type="text"
                             class="modal_form-input"
                             id="firstname"
                             name="firstname"
                             tabindex="0"
-                            aria-labelledby="message-firstname"
+                            aria-labelledby="firstname"
                             aria-required="true"
-                            required />
+                            required >
                         
                         <span class="error-msg" id="message-firstName">Veuillez saisir votre prénom (2 lettres minimum) </span>
                     </div>
                     <div class="modal_form--formData">
-                        <label for ="lastname" class="modal_formaData--label">Nom</label><br/>
+                        <label for ="lastname" class="modal_formaData--label">Nom</label><br>
                         <input
                             type="text"
                             class="modal_form-input"
                             id="lastname"
                             name="lastname"
                             tabindex="0"
-                            tabindex="0" 
-                            aria-labelledby="message-lastname"
+                            aria-labelledby="lastname"
                             aria-required="true"
                             required
-                        />
+                        >
                         <span class="error-msg" id="message-lastName">Veuillez saisir votre nom (minimum 2 caractères)</span>
                     </div>
                     <div class="modal_form--formData">
-                        <label for ="email" class="modal_formaData--label">Email</label><br/>
+                        <label for ="email" class="modal_formaData--label">Email</label><br>
                         <input
                             type="email"
                             class="modal_form-input"
                             id="email"
                             name="email"
-                            aria-labelledby="message-email"
+                            aria-labelledby="email"
                             tabindex="0"
                             aria-required="true"
                             required
-                        />
+                        >
                         <span class="error-msg" id="message-email">Veillez saisir une adresse email correcte</span>
                     </div>
                     <div class="modal_form--formData">
-                        <label for ="message" class="modal_formaData--label">Message</label><br/>
+                        <label for ="message" class="modal_formaData--label">Message</label><br>
                         <textarea
-                            type="text"
+                            rows = "4"
                             class="modal_form-input"
                             id="message"
                             name="message"
                             tabindex="0"
                             aria-required="true"
-                            aria-labelledby="message-message"
+                            aria-labelledby="message"
                             required
                         ></textarea>
                         <span class="error-msg"
@@ -197,24 +195,7 @@
                     aria-hidden="true">image précédente</p>
                     <div class="lightbox_Container">
                         <ul class="lightbox_Container--img">
-                            <!-- <li class="lightbox_object" 
-                            id = ""
 
-                         aria-hidden="true"> -->
-                                <!-- <figure class=" lightbox_figure" aria-labelledby=`image${mediaId.id}`
-                         id =`image${mediaId.id}`
-                         tabindex="0"> -->
-                                    <!-- <img class="lightbox_image"
-                             id="src"
-                             src=""
-                             width="1050"> -->
-                                    <!-- <video class="video-lightbox"
-                             id="video" src="controls"></video>
-                                    <figcaption class="title_image"
-                             aria-hidden="true">
-                                    </figcaption>
-                                </figure>
-                            </li> -->
                         </ul>    
                         <button class="lightbox_close"
                         id="closeLightbox" type="button" aria-labelledby="close-lightbox" tabindex="0">
@@ -239,6 +220,6 @@
 
  
 
-    <script type ="module"src ="./module/photographerPage.js"></script>
+    <script type ="module" src ="./module/photographerPage.js"></script>
 </body>
 </html>

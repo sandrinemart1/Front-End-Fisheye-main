@@ -9,12 +9,13 @@ let popularity = document.getElementById("option1");
 let date = document.getElementById("option2");
 let titre = document.getElementById("option3");
 
+/////ouverture du dropdown /////////////
 function dropDownOpen() {
   dropDownDiv.style.display = "flex";
   chevronDown.setAttribute("aria-expanded", "true");
   popularity.focus();
 }
-
+/////fermeture du dropdown/////////////
 function dropDownClose() {
   dropDownDiv.style.display = "none";
   chevronDown.setAttribute("aria-expanded", "false");
@@ -23,13 +24,11 @@ function dropDownClose() {
 ///////  fonctions de tri  //////////////
 ////// tri par  'populaire' //////////////
 function popularitySort(media) {
-  console.log('ffffffffffffffffff')
   function tri(a, b) {
     return a.likes < b.likes ? 1 : a.likes == b.likes ? 0 : -1;
   }
   media.sort(tri);
   SeparateCardImage(media);
-  console.log(media);
 }
 //////  tri par  'titre' //////////////
 function titleSort(media) {
@@ -53,5 +52,6 @@ function dateSort(media) {
   media.sort(tri);
   SeparateCardImage(media);
 }
-// export{dropDownOpen}
+
+
 export { dropDownOpen, dropDownClose, popularitySort, dateSort, titleSort };

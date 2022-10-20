@@ -8,16 +8,15 @@ function like(mediaId){
       let heart =e.target
       let heartParent = heart.parentNode;
       let likeP = heartParent.parentNode.querySelector('p')
+
       if (e.target.className == 'fa-solid fa-heart' && heartParent.className !=='clicked' ){        
-       likeP.textContent ++
-       likesSum.textContent++
-    // pour n'autoriser qu'un seul clic par image'
-       heartParent.className='clicked';
-     }
+        likeP.textContent ++
+        likesSum.textContent++
+      // pour n'autoriser qu'un seul clic par image'
+        heartParent.className='clicked';
+        }
     })
   }
-///////////////////////////////////
-
 
 ///// injecter likes totaux  et prix dans le footer //////////      
 function likeAdd(stock,photographer){

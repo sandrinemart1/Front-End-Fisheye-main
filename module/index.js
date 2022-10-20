@@ -4,12 +4,13 @@ import { myFetch  } from './fetch.js'
 
 myFetch()
 
-// function affichage(photographersJson){
-//   // console.log(photographersJson[0],'zzzzz')
-//   // let banner = document.querySelector("ul");
-//   // let photographer;
-//   // exercice Ahmed
-//   // for(photographer of photographersJson){
-//     // console.log(photographer.name);
-//   //   banner.innerHTML+=`<li>${photographer.name}</li>`;
-//   // }
+////////evenement scrollY pour atteindre le contenu////////////
+window.addEventListener('scroll', () => content()) 
+function content(){
+    const pageContent = document.querySelector('.contenu-link')
+    if ( window.scrollY > 250 ) {
+        pageContent.style.display = 'flex'
+      } else {
+        pageContent.style.display = 'none'
+      }
+}

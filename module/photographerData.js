@@ -6,9 +6,8 @@ import {like, likeAdd} from './likes.js'
 let string = window.location.href;
 let url = new URL(string);
 let login = url.searchParams.get('id');
-// console.log(login);
-
 let photographer
+
 function getPhotographer(photographers) {
   for (let i = 0; i < photographers.length; i++ ) {
     if (photographers[i].id == login) {
@@ -33,7 +32,7 @@ console.log(photographers[i].media)
   }
 }
 
-/////   function pour recuperer le  prenom du photographe affiché   ////
+/////   fonction pour recuperer le  prenom du photographe affiché   ////
 function firstName(photographer) {
   let fullName= photographer.name
   let splitName =fullName.split(' ');
@@ -47,7 +46,7 @@ function firstName(photographer) {
 
 
 
-// // creer entête de la page de chq photographe
+///// creer entête de la page de chq photographe
 function displayPhotographer() {
   //bandeau entête page photographe
   document.querySelector('.photographer_text--name').textContent = photographer.name;

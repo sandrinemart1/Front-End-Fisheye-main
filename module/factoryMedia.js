@@ -1,6 +1,6 @@
 import { Element } from "./elementDOM.js";
 import { photographer, firstName } from "./photographerData.js";
-import {like, likeAdd} from "./likes.js";
+import {like} from "./likes.js";
 import {lightboxOpen} from './lightbox.js';
 let stock = JSON.parse(localStorage.getItem("photographerStock"));
 
@@ -33,7 +33,7 @@ class Image {
     linkMedia.setAttribute('href', 'javascript:void(0);')
     let imageMedia = document.createElement("img");
     imageMedia.className = "image-media";
-    //corriger les images mal centrées
+    /////////corriger les images mal centrées  //////////
     if (photographer.id == 82 || photographer.id == 925) {
       imageMedia.classList.add("improved-image");
     }
@@ -48,10 +48,10 @@ class Image {
     imageMedia.setAttribute("id", `${mediaId.id}`);
 
 
-    ///// ouverture de la lightbox
+    ///// ouverture de la lightbox ////////////
     linkMedia.addEventListener("click", (e) => lightboxOpen(e));
   }
-  //creer une image pour la lightbox
+  //creer un grand format pour chaque image  dans la lightbox//////////////
   createImageLightbox(mediaId) {
     let li = new Element(
       "li",
@@ -76,20 +76,18 @@ class Image {
     image.setAttribute(
       "alt",
       `image portant le titre "${mediaId.title}" réalisée par ${photographer.name}`
-    );
-  
+    )
     figure.appendChild(image);
     let figcaption = new Element("figcaption", "figcaption", "title_image").el;
     figcaption.innerText = `${mediaId.title}`;
     figure.appendChild(figcaption);
   }
 }
-  //creer une image pour video
+  //creer une image pour  les documents' video'//////////
   class Video{
     createVideo(mediaId) {
-    //  lien contenant une image
+  
       let linkMedia = document.getElementById(`idImage${mediaId.id}`)
-
       let imageMedia = document.createElement('video');
       linkMedia.appendChild(imageMedia);
       imageMedia.setAttribute('src',`../assets/images/${firstName}/${mediaId.video}` );
@@ -98,10 +96,11 @@ class Image {
       imageMedia.setAttribute('controls',true)
       imageMedia.className ='image-media';
   
- /////ouverture de la lightbox 
+ /////ouverture de la lightbox  //////////////
      linkMedia.addEventListener('click',(e) => lightboxOpen(e))
    
     }
+  /////////////// creer une video grand format pour la lightbox//////////
     createVideoLightbox(mediaId){
       let li = new Element('li','li','lightbox_object').el
         li.style.display ='none';
@@ -124,12 +123,11 @@ class Image {
         figcaption.innerText = `${mediaId.title}`
         figcaption.setAttribute('aria-hidden','true')
         figure.appendChild(figcaption)
-    }
-    }
+      }
+}
 
 function SeparateCardImage(media) {
   mediaAndAttributes.innerHTML = "";
-  // console.log(media)
   media.forEach((mediaId) => {
     createDomElements(mediaId);
     if (mediaId.image !== undefined) {
@@ -142,17 +140,13 @@ function SeparateCardImage(media) {
       card.createVideoLightbox(mediaId);
     }
   });
-  let items = document.querySelectorAll(".lightbox_object");
-  // console.log(items)
+  let items = document.querySelectorAll(".lightbox_object");  
   let itemsArray = Array.from(items);
-  // console.log(itemsArray)
   items.forEach((item) => {
     item.classList.add(`object_${itemsArray.indexOf(item)}`);
   });
   let allMedias = document.querySelectorAll(".media_link");
-  // console.log(allMedias)
   let medias = Array.from(allMedias);
-  // console.log(medias)
   medias.forEach((media) => {
     media.classList.add(`media_${medias.indexOf(media)}`);
   });
@@ -168,7 +162,7 @@ function createDomElements(mediaId) {
   ).el;
   mediaAndAttributes.appendChild(articleMedia);
   articleMedia.setAttribute("id", mediaId.id);
-  /////
+  //////////////
   let linkMedia = new Element(
     "linkMedia",
     "a",
@@ -195,14 +189,18 @@ function createDomElements(mediaId) {
   imageLike.textContent = mediaId.likes;
   imageTitle.textContent = mediaId.title;
   let aHeart = new Element("aHeart", "a",'heartCss').el;
+  ////////////attribut a pour acceder aux likes avec la touche tab/////////
   aHeart.setAttribute('id', `spanHeart${mediaId.id}`)
+  aHeart.setAttribute("href", "javascript:void(0);");
+  aHeart.setAttribute("tabindex", "0");
+  aHeart.setAttribute('aria-label', 'ajouter un like')
   imageAttributes.appendChild(aHeart);
   let imageHeart = new Element("imageHeart", "i").el;
   imageHeart.className = "fa-solid fa-heart"
   imageHeart.setAttribute('role', 'button')
   aHeart.appendChild(imageHeart);
 
-  ///// lien des likes
+  ///// lien pour appeler fonction incrementation des likes ///////////
   document.addEventListener("click", (e) => {
     if (
       e.target.tagName === "I" &&
@@ -212,8 +210,9 @@ function createDomElements(mediaId) {
     }
   });
   aHeart.addEventListener("keydown", (e) => {
-    if (e.code == "Enter") {
-      like();
+    if ( e.key == "Enter") {
+      // 
+    like();
     }
   })
 }
