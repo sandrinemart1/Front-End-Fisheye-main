@@ -373,6 +373,13 @@ form textarea {
   height: 900px;
 }
 
+.media__link:focus .image-media {
+  border: solid 7px #D3573C;
+  opacity: 0.7;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
 .lightbox_figure {
   margin: 0;
   padding: 0;
@@ -661,13 +668,6 @@ li {
   transition: 0.5s ease-in-out;
 }
 
-.page_photographer-media-attributes .image-media:focus {
-  border: solid 7px #D3573C;
-  opacity: 0.7;
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
-}
-
 .img_attributes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -691,7 +691,7 @@ li {
 .img_attributes p {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  padding: 3px;
+  padding: 6px;
 }
 
 .img_attributes i {

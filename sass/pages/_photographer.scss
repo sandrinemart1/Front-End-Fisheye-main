@@ -115,11 +115,11 @@
         opacity: 1;
         transform: scale(1);
         transition:  0.5s ease-in-out;
-        &:focus {
-            border: solid 7px $bg-2nd-color;
-            opacity: 0.7;
-            transform: scale(1.15);
-        }  
+        // &:focus {
+        //     border: solid 7px $bg-2nd-color;
+        //     opacity: 0.7;
+        //     transform: scale(1.15);
+        // }  
     }
     
 }
@@ -138,7 +138,7 @@
     p{
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
-        padding:3px;
+        padding:6px;
     }
     i{
         color:$bg-1st-color; 
