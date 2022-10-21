@@ -100,7 +100,6 @@
 
  
 .page_photographer-media-attributes{
-
     display: grid;
     grid-template-columns: 350px 350px 350px;
     gap: 20px;
@@ -115,11 +114,7 @@
         opacity: 1;
         transform: scale(1);
         transition:  0.5s ease-in-out;
-        // &:focus {
-        //     border: solid 7px $bg-2nd-color;
-        //     opacity: 0.7;
-        //     transform: scale(1.15);
-        // }  
+        border-radius: 7px;  
     }
     
 }

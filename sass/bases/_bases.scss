@@ -11,14 +11,14 @@ body {
 a {
     color: black;
     opacity:1;
-    scale:1
+    transform:scale(1);
 }
 
 a:focus{
     text-decoration: none;
     outline-color: $bg-1st-color;
     opacity:0.85;
-    scale:1.15;
+    transform:scale(1.15);
     transition: transform 0.4s ease-in-out;
 }
 
@@ -36,7 +36,7 @@ button{
 
 h1,h3 {
     
-    font: size 2.2rem; ;
+    font-size :2.2rem; ;
     color: $bg-1st-color;
     margin-right: 100px;
 }
@@ -51,7 +51,7 @@ h3{
     padding:0;
     margin:-1px;
     overflow:hidden;
-    clip-path :rect(0,0,0,0);
+    clip-path :polygon(0% 0,0% 0,0% 0,0% 0);
     white-space:nowrap;
     border:0
 }

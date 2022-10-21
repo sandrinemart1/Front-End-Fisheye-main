@@ -46,6 +46,9 @@
       height: 3.2rem;
       font-family: $font-family;
       color: white;
+      &:first-child{
+        z-index: 10;
+      }
       &:nth-child(2) {
         border-bottom: solid 0.05rem white;
         border-top: solid 0.05rem white;
@@ -74,5 +77,5 @@
  #button-dropup {
     position: absolute;
     left: 6.7rem;
-    z-index: 3;
+    z-index: 10;
   } 

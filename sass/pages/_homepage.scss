@@ -61,7 +61,7 @@ header{
 }
 .photographer_section--link{
     text-decoration :none;
-    border: 3px, solid ,black;
+    border: 3px solid black;
     border-radius: 2px; 
     padding: 0.4rem;  
 }
@@ -110,7 +110,7 @@ header{
 /**************************************/
 @media screen and(max-width:650px){
     .tagline .price {
-    font-style: 15px;
+    font-size: 15px;
 }
 }
  //h2   

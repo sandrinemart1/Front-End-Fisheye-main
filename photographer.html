@@ -20,7 +20,7 @@
         <!-- header -->
         <header class="page_photographer-header" >
             <a href="/index.html" aria-label="Page d'accueil de Fisheye">
-                <img src="assets/images/logo.png"  alt='logo fisheye' id ="logo2" aria-label ="logo-Fisheye-Aller à la page d'accueil" lang="en-GB">
+                <img src="assets/images/logo.png"  alt='Fisheye-Home-Page' id ="logo2" aria-label ="logo-Fisheye-Aller à la page d'accueil" lang="en-GB">
             </a>
         </header>
         <!-- corps de page -->
@@ -33,7 +33,7 @@
                         <p class="photographer_text--tagline" id="tagline">Voir le beau dans le quotidien</p>
                         
                     </div>
-                    <button id="contact_button" type="button"  tabindex="0">Contactez-moi</button>
+                    <button id="contact_button" type="button" aria-label ="conactez-moi ouvrir un formulaire de contact" tabindex="0">Contactez-moi</button>
                     <picture class="photographer_section--banner">
                             <img src="./assets/images" alt="photo portrait de chaque photographe">
                         </picture>
@@ -90,10 +90,10 @@
                 <div class ="modal-header">
                     <div class="modal-header_text">
                         <h2 class="modal__title">Contactez-moi</h2>
-                        <span class="close closeModal" id="closeModal" aria-labelledby="close" tabindex="0">
+                        <span class="close close-Contact-Form" id="close-Contact-Form" aria-labelledby="close-Contact-Form" tabindex="0">
                             <i class="fa-solid fa-xmark"></i>
                         </span>
-                        <p class="sr-only" id="close">fermer</p>
+                        <p class="invisible" id="close">fermer</p>
                     </div>
                     <p id="form__name">nom du photographe</p>
                 </div>
@@ -170,7 +170,7 @@
                         class="submitButton" 
                         type="submit"
                         value="Envoyer"
-                        aria-label="soumettre">
+                        aria-label="send">
 
                     </div>
                 </form >            
@@ -181,7 +181,7 @@
             <div class="lightbox-modal" aria-modal="true" 
             role="dialog"
             id="lightbox-library"
-            aria-label="lightbox, realisations en gros plan" 
+            aria-label="lightbox, image closeup view" 
             tabindex="-1">
                 <div  class="lightbox" id="lightbox">
                     <button class="lightbox_chevron--previous"
@@ -198,7 +198,7 @@
 
                         </ul>    
                         <button class="lightbox_close"
-                        id="closeLightbox" type="button" aria-labelledby="close-lightbox" tabindex="0">
+                        id="close-Dialog" type="button" aria-labelledby="close-Dialog" tabindex="0">
                         </button>
                         <p id="close-lightbox" class="invisible"
                         aria-hidden="true">fermer la lightbox</p>

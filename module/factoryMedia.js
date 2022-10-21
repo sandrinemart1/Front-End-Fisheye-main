@@ -198,6 +198,7 @@ function createDomElements(mediaId) {
   let imageHeart = new Element("imageHeart", "i").el;
   imageHeart.className = "fa-solid fa-heart"
   imageHeart.setAttribute('role', 'button')
+  imageHeart.setAttribute('aria-label','likes')
   aHeart.appendChild(imageHeart);
 
   ///// lien pour appeler fonction incrementation des likes ///////////
