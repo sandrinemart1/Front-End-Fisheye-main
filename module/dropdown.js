@@ -8,11 +8,13 @@ let chevronUp = document.getElementById("button-dropup");
 let popularity = document.getElementById("option1");
 let date = document.getElementById("option2");
 let titre = document.getElementById("option3");
+let dropdownButton = document.querySelector('.select-filter_button span')
 
 /////ouverture du dropdown /////////////
 function dropDownOpen() {
   dropDownDiv.style.display = "flex";
   chevronDown.setAttribute("aria-expanded", "true");
+  // dropdownButton.style.zIndex ='0';
   popularity.focus();
 }
 /////fermeture du dropdown/////////////

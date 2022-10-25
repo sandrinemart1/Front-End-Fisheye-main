@@ -35,7 +35,7 @@ function getData(data) {
   let stock = JSON.parse(localStorage.getItem('photographerStock'));
   let media = JSON.parse(localStorage.getItem('mediaStock'));
 
- console.log(stock) 
+
 //////LANCEMENT MODALE D INSCRIPTION///////
 let modalButton = document.getElementById('contact_button')
 document.addEventListener('click', (e)=>{

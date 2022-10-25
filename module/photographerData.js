@@ -21,7 +21,7 @@ function getPhotographer(photographers) {
         photographers[i].portrait,
         photographers[i].media,
       )
-console.log(photographers[i].media)
+// console.log(photographers[i].media)
       firstName(photographers[i])
       displayPhotographer(photographers[i])
       SeparateCardImage(photographers[i].media)

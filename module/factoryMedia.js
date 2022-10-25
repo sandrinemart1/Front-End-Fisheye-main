@@ -4,7 +4,7 @@ import {like} from "./likes.js";
 import {lightboxOpen} from './lightbox.js';
 let stock = JSON.parse(localStorage.getItem("photographerStock"));
 
-let sectionMedia = document.getElementById("media");
+
 let mediaAndAttributes = document.querySelector(
   ".page_photographer-media-attributes");
 
@@ -63,7 +63,7 @@ class Image {
     li.style.display = "none";
     ul.appendChild(li);
     let figure = new Element("figure", "figure", "lightbox_figure").el;
-    figure.setAttribute('aria-labelledby', `images${mediaId.id}`)
+    figure.setAttribute('aria-label', `images${mediaId.id}`)
     figure.setAttribute('tabindex', '0')
     li.appendChild(figure);
     let image = new Element(
@@ -109,7 +109,7 @@ class Image {
         ul.appendChild(li)
         let figure = new Element('figure','figure','lightbox_figure').el
         figure.setAttribute('tabindex', '0')
-        figure.setAttribute('aria-labelledby', `images${mediaId.id}`)
+        figure.setAttribute('aria-label', `images${mediaId.id}`)
         li.appendChild(figure)
         let video = new Element('video','video','video_lightbox').el
         video.setAttribute('src',`../assets/images/${firstName}/${mediaId.video}` );
@@ -125,7 +125,7 @@ class Image {
         figure.appendChild(figcaption)
       }
 }
-
+/////////faire apparaitre les réalisations de chaque photographe et creer un tableau pour les utiliser//////////////
 function SeparateCardImage(media) {
   mediaAndAttributes.innerHTML = "";
   media.forEach((mediaId) => {
@@ -152,9 +152,8 @@ function SeparateCardImage(media) {
   });
   return media
 }
-
+///////creer une base d'éléments DOM ///////////
 function createDomElements(mediaId) {
-
   let articleMedia = new Element(
     "articleMedia",
     "article",
