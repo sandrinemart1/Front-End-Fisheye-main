@@ -34,8 +34,10 @@ function lightboxOpen(e) {
   let id = findId(picture);
   //déterminer la postion de l'object selectionné
   let firstItem = document.getElementById(`object${id}`);
-  let position = giveThePosition(firstItem);
-  displayLightbox()
+  position = giveThePosition(firstItem)+ 1;
+  console.log(firstItem)
+  console.log(position)
+  displayLightbox(position)
   return firstItem
 }
 //////////// position de la première image selectionnée dans la lightbox  ////////
@@ -69,7 +71,7 @@ function goToNext(n) {
 
 function displayLightbox(n){
   const items = document.getElementsByClassName("lightbox_object");
-  console.log(items.length)
+  console.log(n)
   for (let i = 0; i < items.length; i++) {
     items[i].style.display = "none";
     items[i].setAttribute('aria-hidden','true')

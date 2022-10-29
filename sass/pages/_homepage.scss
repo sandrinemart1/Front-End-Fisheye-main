@@ -90,21 +90,22 @@ header{
 .photographer_section--text{
     text-align: center;
     .location{
-        font-size: 13px;
+        font-size: 16px;
         color: $bg-1st-color;
         margin: 4px;
         }
         
     .tagline{
-        font-size: 10px;
+        font-size: 13px;
         margin: 4px;
     }   
     .price{
-        font-size: 9px;
+        font-size: 11px;
         color:$color-black-light;
         margin: 4px;
     }
 }
+
 
 /**************************************/
 @media screen and(max-width:650px){
