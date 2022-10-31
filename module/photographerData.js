@@ -38,7 +38,6 @@ function firstName(photographer) {
   let splitName =fullName.split(' ');
   let firstName1= splitName[0];
   firstName  =  firstName1.replace('-',' ');
-  // console.log(firstName);
   return firstName
   
 }

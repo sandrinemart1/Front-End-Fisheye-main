@@ -210,9 +210,16 @@ function createDomElements(mediaId) {
     }
   });
   aHeart.addEventListener("keydown", (e) => {
-    if ( e.key == "Enter") {
-      // 
-    like();
+    
+    const likesSum = document.querySelector(".infos_likes--count");
+    if ( e.key === "Enter") {
+     
+      {
+        // pour n'autoriser qu'un seul clic par image'
+        imageHeart.classList.add("clicked");
+        imageLike.textContent++;
+        likesSum.textContent++;
+      }
     }
   })
 }

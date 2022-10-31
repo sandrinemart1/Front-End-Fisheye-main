@@ -35,8 +35,6 @@ function lightboxOpen(e) {
   //déterminer la postion de l'object selectionné
   let firstItem = document.getElementById(`object${id}`);
   position = giveThePosition(firstItem)+ 1;
-  console.log(firstItem)
-  console.log(position)
   displayLightbox(position)
   return firstItem
 }
@@ -71,15 +69,15 @@ function goToNext(n) {
 
 function displayLightbox(n){
   const items = document.getElementsByClassName("lightbox_object");
-  console.log(n)
+
   for (let i = 0; i < items.length; i++) {
     items[i].style.display = "none";
     items[i].setAttribute('aria-hidden','true')
   }
-  console.log(position)
+
   // next----sauter de la derniere image à la premiere
   if(n > items.length){position= 1}
-  console.log(position)
+
   // previous ---sauter de la premiere image  à la derniere
   if(n <1){position = items.length}
   //afficher uniquement l 'object selectionné(-1 car fonction parametre+=n)
@@ -94,7 +92,6 @@ function displayLightbox(n){
 buttonClose.addEventListener("click", () => lightboxClose());
 document.body.addEventListener("keydown", (e) => onKey(e));
 function onKey(e) {
-  // console.log(e.target)
   let keyname = e.key;
   if (keyname == "ArrowRight") {
     goToNext(1);

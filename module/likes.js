@@ -8,18 +8,15 @@ function like(mediaId) {
     let heart = e.target;
     let heartParent = heart.parentNode;
     let likeP = heartParent.parentNode.querySelector("p");
-    if (e.target.className === "fa-solid fa-heart") {
-      heart.classList.add("clicked");
-    }
 
     if (
       e.target.className === "fa-solid fa-heart" &&
       heartParent.className !== "clicked"
     ) {
+      // pour n'autoriser qu'un seul clic par image'
+      heart.classList.add("clicked");
       likeP.textContent++;
       likesSum.textContent++;
-      // pour n'autoriser qu'un seul clic par image'
-      heart.className = "clicked";
     }
   });
 }
