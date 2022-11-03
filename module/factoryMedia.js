@@ -43,7 +43,7 @@ class Image {
     );
     imageMedia.setAttribute(
       "alt",
-      `image portant le titre "${mediaId.title}" réalisée par ${mediaId.name}`
+      `image portant le titre "${mediaId.title}" réalisée par ${photographer.name}`
     );
     imageMedia.setAttribute("id", `${mediaId.id}`);
 

@@ -62,5 +62,8 @@ h3{
     margin-left: 100px;
     padding:0.5rem 1.5rem 0.5rem 0;
     transform: scale(1);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;   
+     @media screen and(max-width:800px){
+        margin-left: 0px;
+    }
 }

@@ -20,6 +20,10 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    @media screen and(max-width:800px){
+        flex-direction: column;
+        align-items: initial;
+    }
 }
 .contenu {
     display: flex;
@@ -78,11 +82,15 @@ header{
         font-size: 2.25rem;
         line-height: 47px;
         margin: 0;
+        @media screen and(max-width:1200px){
+            font-size:1.9rem
+        }
         }
     img {
         width: 100%;
         object-fit: cover;
-        box-sizing: border-box;        height:200px;
+        box-sizing: border-box;      
+        height:200px;
         width: 200px;
         border-radius: 50%;
     }
@@ -113,15 +121,10 @@ header{
     font-size: 15px;
 }
 }
- //h2   
+ 
 
-@media  screen and (max-width: 1055px){
-    h2 {
-    font-size: 2rem;
-    }
-}
 //photographer section
-@media screen and (max-width: 845px ) {
+@media screen and (max-width: 1055px ) {
     .photographer_section{
     grid-template-columns: 1fr 1fr;
     gap:60px;
