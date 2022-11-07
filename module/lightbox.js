@@ -83,7 +83,6 @@ function displayLightbox(n){
   //afficher uniquement l 'object selectionné(-1 car fonction parametre+=n)
   items[position-1].style.display = "flex";
   items[position-1].setAttribute('aria-hidden','false')
-
 }
 
 

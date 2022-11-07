@@ -4,7 +4,7 @@
 import{getData} from './photographerPage.js'
 
 function myFetch2() {
-    fetch("../data/photographers.json")
+    fetch("https://sandrinemart1.github.io/Front-End-Fisheye-main/data/photographers.json")
     .then(async (response) => {
       if (response.ok) {
         const data = await response.json()
