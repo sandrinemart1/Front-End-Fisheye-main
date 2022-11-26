@@ -29,7 +29,7 @@ const mediasJson = [];
 let photographerJson;
 //fonction fetch pour page d'accueil
 async function myFetch(affichage) {
-  const response = await fetch("../data/photographers.json").then(
+  const response = await fetch("https://sandrinemart1.github.io/Front-End-Fisheye-main/data/photographers.json").then(
     async (response) => {
       if (response.ok) {
         const data = await response.json();
