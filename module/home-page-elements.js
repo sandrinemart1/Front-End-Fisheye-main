@@ -25,9 +25,9 @@ function createCardDOM(photographersJson) {
   paragraph.appendChild(location);
   paragraph.appendChild(tagline);
   paragraph.appendChild(price);
-  anchor.setAttribute('href', `../photographer.html?id=` + `${photographersJson[i].id}`)
+  anchor.setAttribute('href', `https://sandrinemart1.github.io/Front-End-Fisheye-main/photographer.html?id=` + `${photographersJson[i].id}`)
    //contenu de chaque carte 
-  img.setAttribute('src', `../../assets/images/Photographers ID Photos/${photographersJson[i].portrait}`);
+  img.setAttribute('src', `https://sandrinemart1.github.io/Front-End-Fisheye-main/assets/images/Photographers ID Photos/${photographersJson[i].portrait}`);
   img.setAttribute('alt',`portrait du photographe $, {photographersJson[i].name}`)
   img.setAttribute('width', '200');
   img.setAttribute('height', '200');
