@@ -39,7 +39,7 @@ class Image {
     }
     linkMedia.appendChild(imageMedia);
     imageMedia.setAttribute(
-      "src",`../assets/images/${firstName}/${mediaId.image}`
+      "src",`https://sandrinemart1.github.io/Front-End-Fisheye-main/assets/images/${firstName(photographer)}/${mediaId.image}`
     );
     imageMedia.setAttribute(
       "alt",
@@ -72,7 +72,7 @@ class Image {
       "image_lightbox"    
     ).el;
     image.setAttribute('id',`image${mediaId.id}`)
-    image.setAttribute("src", `../assets/images/${firstName}/${mediaId.image}`);
+    image.setAttribute("src", `https://sandrinemart1.github.io/Front-End-Fisheye-main/assets/images/${firstName(photographer)}/${mediaId.image}`);
     image.setAttribute(
       "alt",
       `image portant le titre "${mediaId.title}" réalisée par ${photographer.name}`
@@ -90,7 +90,7 @@ class Image {
       let linkMedia = document.getElementById(`idImage${mediaId.id}`)
       let imageMedia = document.createElement('video');
       linkMedia.appendChild(imageMedia);
-      imageMedia.setAttribute('src',`../assets/images/${firstName}/${mediaId.video}` );
+      imageMedia.setAttribute('src',`https://sandrinemart1.github.io/Front-End-Fisheye-main/assets/images/${firstName(photographer)}/${mediaId.video}` );
       imageMedia.setAttribute('id',`${mediaId.id}`)
       imageMedia.setAttribute('alt',`vidéo portant le titre "${mediaId.title}" réalisée par ${photographer.name}`)
       imageMedia.setAttribute('controls',true)
@@ -112,7 +112,7 @@ class Image {
         figure.setAttribute('aria-label', `images${mediaId.id}`)
         li.appendChild(figure)
         let video = new Element('video','video','video_lightbox').el
-        video.setAttribute('src',`../assets/images/${firstName}/${mediaId.video}` );
+        video.setAttribute('src',`../assets/images/${firstName(photographer)}/${mediaId.video}` );
         video.setAttribute('controls',true)
         video.setAttribute('width', '1050')
         video.setAttribute('id',`video${mediaId.id}`)
